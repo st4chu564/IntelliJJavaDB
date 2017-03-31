@@ -1,0 +1,5 @@
+jeden
+dwa
+trzy
+4
+6

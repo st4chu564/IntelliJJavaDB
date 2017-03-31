@@ -4,9 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by stasiek on 21.03.2017.
- */
+
 public class Database {
     private String fileName;
     private BufferedReader read = null;

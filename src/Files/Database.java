@@ -1,16 +1,22 @@
 package Files;
 
 import java.io.*;
-import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Database {
-    private String fileName;
-    private BufferedReader read = null;
+    protected String fileName;
+    protected BufferedReader read = null;
     private List<String> list = new ArrayList<>();
     public Database(String fileName) {
+        this.fileName = fileName;
+        readFile(fileName);
+    }
+    public Database(){
+        this.fileName = "";
+    }
+    private void readFile(String fileName){
         if (fileName == "")
             System.out.println("First, create a file");
         else {
@@ -35,9 +41,6 @@ public class Database {
                 }
             }
         }
-    }
-    public Database(){
-        this.fileName = "";
     }
     public int createNew(String fileName){
         this.fileName = fileName;
@@ -64,11 +67,15 @@ public class Database {
             System.out.println("List is empty");
         else
             for(String value: list){
-            System.out.println(value);
+                System.out.println(value);
             }
     }
-    public static void main (String []args){
-
+    public List<String> giveNames(){
+        return list;
     }
-
+    public int getNumberOfFiles(){
+        return list.size();
+    }
+    public static void main (String []args){
+    }
 }

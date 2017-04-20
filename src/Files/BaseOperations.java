@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseOperations extends Database{
-    private ArrayList<List<String>> base = new ArrayList<List<String>>();
+    private ArrayList<List<String>> base = new ArrayList<>();
     private List<String> baseTempStore = new ArrayList<>();
 
     public BaseOperations(String fileName){
@@ -36,7 +36,7 @@ public class BaseOperations extends Database{
             }
         }catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         } finally {
             try {
@@ -56,5 +56,8 @@ public class BaseOperations extends Database{
         }
 
         }
+    public ArrayList<List<String>> returnBase(){
+        return base;
+    }
     }
 

@@ -1,5 +1,6 @@
 package Files;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -43,6 +44,10 @@ public class Main {
         }
         currentFileIndex = 0;
         mainBase[currentFileIndex].printBase();
-
+        Glowny gui = new Glowny(mainBase[currentFileIndex].returnBase());
+        gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        gui.setSize(600,200);
+        gui.setVisible(true);
+        gui.setTitle("Base");
         }
 }
